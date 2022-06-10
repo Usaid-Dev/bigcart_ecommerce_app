@@ -1,15 +1,9 @@
 import 'dart:convert';
-import 'dart:ffi';
-
 import 'package:bigcart_ecommerce_app/Models/UserModel.dart';
-import 'package:bigcart_ecommerce_app/Providers/cart_provider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import '../Models/CartModel.dart';
 
 class User_Perference{
-
   saveUserInfo(UserModel userModel) async{
     final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     if (userModel.id != null) {
@@ -103,10 +97,8 @@ class User_Perference{
   }
 
   Future removeUserInfo() async {
-
     final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     sharedPreferences.setBool("IsUserLoggedIn", false);
-
     sharedPreferences.remove('id');
     sharedPreferences.remove('email');
     sharedPreferences.remove('phone');
@@ -114,6 +106,4 @@ class User_Perference{
     sharedPreferences.remove('accessToken');
 
   }
-
-
 }

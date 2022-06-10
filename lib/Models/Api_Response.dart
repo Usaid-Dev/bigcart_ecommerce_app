@@ -19,5 +19,4 @@ class Api_Response<T extends ApiDataModel> {
       "data":data?.toJson()
     };
   }
-
 }

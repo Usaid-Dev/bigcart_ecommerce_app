@@ -14,16 +14,17 @@ import 'package:bigcart_ecommerce_app/Widgets/product_card.dart';
 import 'package:carousel_nullsafety/carousel_nullsafety.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../Utility/shared_preference.dart';
 
 class Home_Screen extends StatefulWidget {
   const Home_Screen({Key? key}) : super(key: key);
+
   @override
   State<Home_Screen> createState() => _Home_ScreenState();
 }
 
 class _Home_ScreenState extends State<Home_Screen> {
+
   @override
   Widget build(BuildContext context) {
     Category_Provider categoryProvider =
@@ -52,8 +53,8 @@ class _Home_ScreenState extends State<Home_Screen> {
                   borderRadius: BorderRadius.circular(5)),
               child: TextField(
                 decoration: InputDecoration(
-                    prefixIcon: const Image(
-                        image: AssetImage('assets/images/search_icon.png')),
+                    prefixIcon: const Image(image: AssetImage('assets/images/search_icon.png')
+                    ),
                     suffixIconColor: Colors.white,
                     hintText: "Search keywords...",
                     suffixIcon: Material(
@@ -62,7 +63,8 @@ class _Home_ScreenState extends State<Home_Screen> {
                         borderRadius: BorderRadius.circular(100),
                         onTap: () {},
                         child: const Image(
-                            image: AssetImage('assets/images/filter_icon.png')),
+                            image: AssetImage('assets/images/filter_icon.png')
+                        ),
                       ),
                     ),
                     hintStyle: const TextStyle(
@@ -70,9 +72,9 @@ class _Home_ScreenState extends State<Home_Screen> {
                         fontSize: 15,
                         fontWeight: FontWeight.w500),
                     border: InputBorder.none),
-                //onChanged:(value){print(value);} ,
                 onSubmitted: (value) => onsearch(value),
-              )),
+              )
+          ),
           automaticallyImplyLeading: false,
           backgroundColor: Colors.white,
           elevation: 0.0,
@@ -109,8 +111,9 @@ class _Home_ScreenState extends State<Home_Screen> {
                         top: 120,
                         left: 30,
                         child: Text("20% off on your \n first purchase",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w600, fontSize: 18)))
+                            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18)
+                        )
+                    )
                   ],
                 ),
                 Row(
@@ -120,15 +123,17 @@ class _Home_ScreenState extends State<Home_Screen> {
                       width: MediaQuery.of(context).size.width * 0.06,
                     ),
                     const Text("Categories",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600, fontSize: 18)),
+                        style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18)
+                    ),
                     const Spacer(),
                     Material(
                         color: Colors.transparent,
                         child: InkWell(
                             onTap: () => {},
                             borderRadius: BorderRadius.circular(100),
-                            child: const Icon(Icons.arrow_forward_ios))),
+                            child: const Icon(Icons.arrow_forward_ios)
+                        )
+                    ),
                     SizedBox(width: MediaQuery.of(context).size.width * 0.05),
                   ],
                 ),
@@ -137,8 +142,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                     child: FutureBuilder(
                         builder: (BuildContext context,
                             AsyncSnapshot<dynamic> snapshot) {
-                          if (snapshot.connectionState ==
-                              ConnectionState.waiting) {
+                          if (snapshot.connectionState == ConnectionState.waiting) {
                             return Center(
                                 child: CircularProgressIndicator(
                                     color: Theme.of(context).primaryColorDark));
@@ -158,7 +162,9 @@ class _Home_ScreenState extends State<Home_Screen> {
                           );
                         },
                         future: categoryProvider.getCategory(
-                            userProvider.userModel.accessToken ?? ""))),
+                            userProvider.userModel.accessToken ?? "")
+                    )
+                ),
                 Row(
                   children: [
                     SizedBox(
@@ -166,15 +172,17 @@ class _Home_ScreenState extends State<Home_Screen> {
                       width: MediaQuery.of(context).size.width * 0.06,
                     ),
                     const Text("Featured products",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600, fontSize: 18)),
+                        style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18)
+                    ),
                     const Spacer(),
                     Material(
                         color: Colors.transparent,
                         child: InkWell(
                             onTap: () => {},
                             borderRadius: BorderRadius.circular(100),
-                            child: const Icon(Icons.arrow_forward_ios))),
+                            child: const Icon(Icons.arrow_forward_ios)
+                        )
+                    ),
                     SizedBox(width: MediaQuery.of(context).size.width * 0.05),
                   ],
                 ),
@@ -187,7 +195,8 @@ class _Home_ScreenState extends State<Home_Screen> {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return Center(
                       child: CircularProgressIndicator(
-                          color: Theme.of(context).primaryColorDark));
+                          color: Theme.of(context).primaryColorDark)
+                  );
                 }
                 return GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -230,7 +239,8 @@ class _Home_ScreenState extends State<Home_Screen> {
                         .where((element) => element.qty > 0)
                         .length
                         .toString(),
-                    style: const TextStyle(fontWeight: FontWeight.w600)),
+                    style: const TextStyle(fontWeight: FontWeight.w600)
+                ),
               ),
               animationType: BadgeAnimationType.scale,
               showBadge: provider.cartProductList.isNotEmpty,
@@ -238,7 +248,9 @@ class _Home_ScreenState extends State<Home_Screen> {
               child: FloatingActionButton(
                 onPressed: () {
                   Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => const Cart_Screen()));
+                      MaterialPageRoute(builder: (_) => const Cart_Screen()
+                      )
+                  );
                 },
                 backgroundColor: Theme.of(context).primaryColorDark,
                 elevation: 10,
@@ -262,23 +274,22 @@ class _Home_ScreenState extends State<Home_Screen> {
                       User_Perference().removeUserInfo().whenComplete(() {
                         Navigator.of(context).pushAndRemoveUntil(
                             MaterialPageRoute(
-                                builder: (context) => const Login_Screen()),
+                                builder: (context) => const Login_Screen()
+                            ),
                             (Route<dynamic> route) => false);
                       });
                     },
                     iconSize: 27),
               ),
               Padding(
-                padding: const EdgeInsets.only(
-                    top: 5, bottom: 5, left: 30, right: 10),
+                padding: const EdgeInsets.only(top: 5, bottom: 5, left: 30, right: 10),
                 child: IconButton(
                     icon: const Icon(Icons.home_outlined, color: Colors.black),
                     onPressed: () {},
                     iconSize: 27),
               ),
               Padding(
-                padding: const EdgeInsets.only(
-                    top: 5, bottom: 5, left: 30, right: 10),
+                padding: const EdgeInsets.only(top: 5, bottom: 5, left: 30, right: 10),
                 child: IconButton(
                     icon: const Icon(Icons.favorite_border,
                         color: Color(0xff868889)),
@@ -299,7 +310,9 @@ class _Home_ScreenState extends State<Home_Screen> {
   onsearch(String value) {
     if (value.isNotEmpty) {
       Navigator.of(context).push(MaterialPageRoute(
-          builder: (_) => ProductsByTitle_Screen(searchQuery: value)));
+          builder: (_) => ProductsByTitle_Screen(searchQuery: value)
+      )
+      );
     }
   }
 

@@ -1,11 +1,9 @@
 import 'package:bigcart_ecommerce_app/Models/CartModel.dart';
 import 'package:bigcart_ecommerce_app/Screens/Checkout_Screen.dart';
 import 'package:bigcart_ecommerce_app/Widgets/cart_item.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:provider/provider.dart';
-
 import '../Providers/cart_provider.dart';
 import '../Widgets/RaisedGradientButton.dart';
 
@@ -19,7 +17,7 @@ class Cart_Screen extends StatefulWidget {
 class _Cart_ScreenState extends State<Cart_Screen> {
   @override
   Widget build(BuildContext context) {
-    double totalPrice = 0, shippingPrice = 1.5;
+    double shippingPrice = 1.5;
     return Scaffold(
       backgroundColor: const Color(0xffF4F5F9),
       appBar: AppBar(
@@ -53,8 +51,6 @@ class _Cart_ScreenState extends State<Cart_Screen> {
                       extentRatio: 0.25,
                       children: [
                         SlidableAction(
-                          // An action can be bigger than the others.
-
                           backgroundColor: const Color(0xFFEF574B),
                           foregroundColor: Colors.white,
                           icon: Icons.delete,
@@ -79,7 +75,8 @@ class _Cart_ScreenState extends State<Cart_Screen> {
                 itemCount: provider.cartProductList.length,
               );
             },
-          ))
+          )
+          )
         ],
       ),
       bottomNavigationBar: Container(
@@ -114,7 +111,8 @@ class _Cart_ScreenState extends State<Cart_Screen> {
                         style: const TextStyle(
                             color: Color(0xff868889),
                             fontWeight: FontWeight.w500,
-                            fontSize: 15)),
+                            fontSize: 15)
+                    ),
                   ],
                 ),
                 const SizedBox(height: 7),
@@ -125,7 +123,8 @@ class _Cart_ScreenState extends State<Cart_Screen> {
                         style: TextStyle(
                             color: Color(0xff868889),
                             fontWeight: FontWeight.w500,
-                            fontSize: 15)),
+                            fontSize: 15)
+                    ),
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.35,
                     ),
@@ -133,13 +132,15 @@ class _Cart_ScreenState extends State<Cart_Screen> {
                         style: const TextStyle(
                             color: Color(0xff868889),
                             fontWeight: FontWeight.w500,
-                            fontSize: 15)),
+                            fontSize: 15)
+                    ),
                   ],
                 ),
                 Padding(
                     padding: const EdgeInsets.all(20),
                     child:
-                        Container(color: const Color(0xFFEBEBEB), height: 1.5)),
+                        Container(color: const Color(0xFFEBEBEB), height: 1.5)
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -147,15 +148,15 @@ class _Cart_ScreenState extends State<Cart_Screen> {
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.w600,
-                            fontSize: 18)),
+                            fontSize: 18)
+                    ),
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.4,
                     ),
                     Text("\$${provider.getProductsPrice() + shippingPrice}",
-                        style: const TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 18)),
+                        style: const TextStyle(color: Colors.black,
+                            fontWeight: FontWeight.w600, fontSize: 18)
+                    ),
                   ],
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.02),
@@ -165,17 +166,13 @@ class _Cart_ScreenState extends State<Cart_Screen> {
                   margin_left: 17,
                   margin_right: 17,
                   isdisabled: provider.cartProductList
-                              .where((element) => element.qty > 0)
-                              .length >=
-                          1
+                              .where((element) => element.qty > 0).isNotEmpty
                       ? false
                       : true,
                   child: const Text("Checkout",
                       style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.white,
-                          letterSpacing: 1)),
+                          fontSize: 15, fontWeight: FontWeight.w600, color: Colors.white, letterSpacing: 1)
+                  ),
                   gradient: const LinearGradient(
                     colors: <Color>[Color(0xffAEDC81), Color(0xff6CC51D)],
                   ),

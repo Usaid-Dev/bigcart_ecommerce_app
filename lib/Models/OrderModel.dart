@@ -31,22 +31,22 @@ class OrderModel {
     if (json['items'] != null) {
       items = <Items>[];
       json['items'].forEach((v) {
-        items!.add(new Items.fromJson(v));
+        items!.add(Items.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['name'] = this.name;
-    data['email'] = this.email;
-    data['phoneNumber'] = this.phoneNumber;
-    data['address'] = this.address;
-    data['zip'] = this.zip;
-    data['city'] = this.city;
-    data['country'] = this.country;
-    if (this.items != null) {
-      data['items'] = this.items!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = Map<String, dynamic>();
+    data['name'] = name;
+    data['email'] = email;
+    data['phoneNumber'] = phoneNumber;
+    data['address'] = address;
+    data['zip'] = zip;
+    data['city'] = city;
+    data['country'] = country;
+    if (items != null) {
+      data['items'] = items!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -87,16 +87,16 @@ class Items {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['catId'] = this.catId;
-    data['title'] = this.title;
-    data['unit'] = this.unit;
-    data['stockAvailable'] = this.stockAvailable;
-    data['image'] = this.image;
-    data['color'] = this.color;
-    data['price'] = this.price;
-    data['qty'] = this.qty;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['catId'] = catId;
+    data['title'] = title;
+    data['unit'] = unit;
+    data['stockAvailable'] = stockAvailable;
+    data['image'] = image;
+    data['color'] = color;
+    data['price'] = price;
+    data['qty'] = qty;
     return data;
   }
 }

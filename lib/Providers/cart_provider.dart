@@ -1,19 +1,11 @@
-import 'dart:convert';
-
 import 'package:bigcart_ecommerce_app/Models/CartModel.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
 import '../Utility/shared_preference.dart';
-
 
 class Cart_Provider extends ChangeNotifier{
 
   List<CartModel> _cartProductList=[];
-
-
   List<CartModel> get cartProductList => _cartProductList;
-
 
   int getItemIndex(int id)
   {
@@ -41,9 +33,6 @@ class Cart_Provider extends ChangeNotifier{
   void getCartListLoaded(){
     User_Perference().getCartItems().then((value) =>
     _cartProductList =value
-      /*value.forEach((element) {
-      print("${element.categoryId}${element.productId}${element.title}${element.qty}");
-    })*/
     );
   }
 
@@ -57,9 +46,6 @@ class Cart_Provider extends ChangeNotifier{
          notifyListeners();
        }
    }
-   /*cartProductList.forEach((element) {
-     print("tile: ${element.title} qyt: ${element.qty} id: ${element.productId} Favorite: ${element.productFavorite} ");
-   });*/
   }
 
   void decrementProductQyt(int id) {
@@ -96,9 +82,6 @@ class Cart_Provider extends ChangeNotifier{
      addProductToCart(cartModel);
      User_Perference().saveCartItems(_cartProductList);
    }
-   /*cartProductList.forEach((element) {
-     print("tile: ${element.title} qyt: ${element.qty} id: ${element.productId} Favorite: ${element.productFavorite} ");
-   });*/
   }
 
   void removeFromFavorite(int id) {
@@ -119,8 +102,6 @@ class Cart_Provider extends ChangeNotifier{
     }
   }
 
-
-
   bool isProductFavorite(int id){
     int index = getItemIndex(id);
     if (index>=0) {
@@ -134,15 +115,13 @@ class Cart_Provider extends ChangeNotifier{
 
   void removeProduct(int id)
   {
-    if(id != null) {
-      int index = getItemIndex(id);
-      if (index >= 0) {
-        if (_cartProductList[index].productId == id) {
-          User_Perference().removeCartItems();
-          _cartProductList.removeAt(index);
-          User_Perference().saveCartItems(_cartProductList);
-          notifyListeners();
-        }
+    int index = getItemIndex(id);
+    if (index >= 0) {
+      if (_cartProductList[index].productId == id) {
+        User_Perference().removeCartItems();
+        _cartProductList.removeAt(index);
+        User_Perference().saveCartItems(_cartProductList);
+        notifyListeners();
       }
     }
   }
@@ -168,7 +147,6 @@ class Cart_Provider extends ChangeNotifier{
          }
       }
         return false;
-
   }
 
   double getProductsPrice()

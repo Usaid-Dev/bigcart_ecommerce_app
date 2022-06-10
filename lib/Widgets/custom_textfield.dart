@@ -17,7 +17,6 @@ class custom_textfield extends StatelessWidget {
     this.txtfield_padding=10, required this.fieldValidator,
     required this.onsaved}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -1,5 +1,6 @@
-String? validatePassword(String? txt) {
-  if (txt == null || txt.isEmpty) {
+
+ String? validatePassword(String? txt) {
+   if (txt == null || txt.isEmpty) {
     return "Enter Your Password!";
   }
   if (txt.length < 8) {

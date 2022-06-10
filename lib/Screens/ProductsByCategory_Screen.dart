@@ -1,30 +1,28 @@
-import 'dart:ui';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../Models/ProductModel.dart';
 import '../Providers/product_provider.dart';
 import '../Providers/user_provider.dart';
-import '../Widgets/custom_textfield.dart';
 import '../Widgets/product_card.dart';
 
 class Filtered_Products_Screen extends StatefulWidget {
   final int catId;
   final String catName;
   const Filtered_Products_Screen({required this.catId, required this.catName});
+
   @override
   State<Filtered_Products_Screen> createState() =>
       _Filtered_Products_ScreenState();
 }
 
 class _Filtered_Products_ScreenState extends State<Filtered_Products_Screen> {
+
   @override
   Widget build(BuildContext context) {
     User_Provider userProvider =
         Provider.of<User_Provider>(context, listen: false);
     Product_Provider productProvider =
         Provider.of<Product_Provider>(context, listen: false);
-    //productProvider.productlist?.forEach((element) {print("${element.title} ${element.qty} ");});
     return Scaffold(
       backgroundColor: const Color(0xffF4F5F9),
       appBar: AppBar(
@@ -33,7 +31,9 @@ class _Filtered_Products_ScreenState extends State<Filtered_Products_Screen> {
             child: InkWell(
                 borderRadius: BorderRadius.circular(30),
                 onTap: () => onback(context),
-                child: const Icon(Icons.west, color: Colors.black))),
+                child: const Icon(Icons.west, color: Colors.black)
+            )
+        ),
         backgroundColor: Colors.white,
         centerTitle: true,
         automaticallyImplyLeading: false,
@@ -51,7 +51,9 @@ class _Filtered_Products_ScreenState extends State<Filtered_Products_Screen> {
                 child: InkWell(
                     borderRadius: BorderRadius.circular(30),
                     onTap: () {},
-                    child: const Icon(Icons.tune, color: Colors.black))),
+                    child: const Icon(Icons.tune, color: Colors.black)
+                )
+            ),
           ),
         ],
         elevation: 0,
@@ -64,7 +66,8 @@ class _Filtered_Products_ScreenState extends State<Filtered_Products_Screen> {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return Center(
                       child: CircularProgressIndicator(
-                          color: Theme.of(context).primaryColorDark));
+                          color: Theme.of(context).primaryColorDark)
+                  );
                 }
                 return GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

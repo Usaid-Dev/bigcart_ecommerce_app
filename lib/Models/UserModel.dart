@@ -26,5 +26,4 @@ class UserModel implements ApiDataModel{
     password =json['password'];
     accessToken =json['accessToken'];
   }
-
 }

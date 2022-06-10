@@ -4,7 +4,6 @@ import 'package:bigcart_ecommerce_app/Screens/OrderSuccess_Screen.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../Models/OrderModel.dart';
 import '../Providers/cart_provider.dart';
 import '../Utility/Validator.dart';
@@ -28,6 +27,7 @@ class _Checkout_ScreenState extends State<Checkout_Screen> {
     'SaudiArabia',
     'Qatar'
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,16 +54,11 @@ class _Checkout_ScreenState extends State<Checkout_Screen> {
               SizedBox(height: MediaQuery.of(context).size.height * 0.042),
               custom_textfield(
                 inputDecoration: const InputDecoration(
-                    prefixIcon: Image(
-                        image: AssetImage('assets/images/person_icon.png'),
-                        height: 24,
-                        width: 24),
+                    prefixIcon: Image(image: AssetImage('assets/images/person_icon.png'),
+                        height: 24, width: 24),
                     hintText: "Name",
-                    hintStyle: TextStyle(
-                        color: Color(0xFF868889),
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: 1.5),
+                    hintStyle: TextStyle(color: Color(0xFF868889),
+                        fontSize: 15, fontWeight: FontWeight.w500, letterSpacing: 1.5),
                     border: InputBorder.none),
                 txtfield_padding: 5,
                 txt_input_type: TextInputType.name,
@@ -74,16 +69,11 @@ class _Checkout_ScreenState extends State<Checkout_Screen> {
               SizedBox(height: MediaQuery.of(context).size.height * 0.01),
               custom_textfield(
                   inputDecoration: const InputDecoration(
-                      prefixIcon: Image(
-                          image: AssetImage('assets/images/email_icon.png'),
-                          height: 24,
-                          width: 24),
+                      prefixIcon: Image(image: AssetImage('assets/images/email_icon.png'),
+                          height: 24, width: 24),
                       hintText: "Email address",
-                      hintStyle: TextStyle(
-                          color: Color(0xFF868889),
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                          letterSpacing: 1.5),
+                      hintStyle: TextStyle(color: Color(0xFF868889), fontSize: 15,
+                          fontWeight: FontWeight.w500, letterSpacing: 1.5),
                       border: InputBorder.none),
                   txtfield_padding: 5,
                   txt_input_type: TextInputType.emailAddress,
@@ -92,16 +82,11 @@ class _Checkout_ScreenState extends State<Checkout_Screen> {
               SizedBox(height: MediaQuery.of(context).size.height * 0.01),
               custom_textfield(
                 inputDecoration: const InputDecoration(
-                    prefixIcon: Image(
-                        image: AssetImage('assets/images/telephone_icon.png'),
-                        height: 24,
-                        width: 24),
+                    prefixIcon: Image(image: AssetImage('assets/images/telephone_icon.png'),
+                        height: 24, width: 24),
                     hintText: "Phone number",
-                    hintStyle: TextStyle(
-                        color: Color(0xFF868889),
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: 1.5),
+                    hintStyle: TextStyle(color: Color(0xFF868889),
+                        fontSize: 15, fontWeight: FontWeight.w500, letterSpacing: 1.5),
                     border: InputBorder.none),
                 txtfield_padding: 5,
                 txt_input_type: TextInputType.phone,
@@ -111,16 +96,11 @@ class _Checkout_ScreenState extends State<Checkout_Screen> {
               SizedBox(height: MediaQuery.of(context).size.height * 0.01),
               custom_textfield(
                   inputDecoration: const InputDecoration(
-                      prefixIcon: Image(
-                          image: AssetImage('assets/images/location_icon.png'),
-                          height: 24,
-                          width: 24),
+                      prefixIcon: Image(image: AssetImage('assets/images/location_icon.png'),
+                          height: 24, width: 24),
                       hintText: "Address",
-                      hintStyle: TextStyle(
-                          color: Color(0xFF868889),
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                          letterSpacing: 1.5),
+                      hintStyle: TextStyle(color: Color(0xFF868889),
+                          fontSize: 15, fontWeight: FontWeight.w500, letterSpacing: 1.5),
                       border: InputBorder.none),
                   txtfield_padding: 5,
                   txt_input_type: TextInputType.multiline,
@@ -130,16 +110,11 @@ class _Checkout_ScreenState extends State<Checkout_Screen> {
               SizedBox(height: MediaQuery.of(context).size.height * 0.01),
               custom_textfield(
                   inputDecoration: const InputDecoration(
-                      prefixIcon: Image(
-                          image: AssetImage('assets/images/zipcode_icon.png'),
-                          height: 24,
-                          width: 24),
+                      prefixIcon: Image(image: AssetImage('assets/images/zipcode_icon.png'),
+                          height: 24, width: 24),
                       hintText: "Zip code",
-                      hintStyle: TextStyle(
-                          color: Color(0xFF868889),
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                          letterSpacing: 1.5),
+                      hintStyle: TextStyle(color: Color(0xFF868889),
+                          fontSize: 15, fontWeight: FontWeight.w500, letterSpacing: 1.5),
                       border: InputBorder.none),
                   txtfield_padding: 5,
                   txt_input_type: TextInputType.number,
@@ -151,14 +126,10 @@ class _Checkout_ScreenState extends State<Checkout_Screen> {
                   inputDecoration: const InputDecoration(
                       prefixIcon: Image(
                           image: AssetImage('assets/images/map_icon.png'),
-                          height: 24,
-                          width: 24),
+                          height: 24, width: 24),
                       hintText: "City",
-                      hintStyle: TextStyle(
-                          color: Color(0xFF868889),
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                          letterSpacing: 1.5),
+                      hintStyle: TextStyle(color: Color(0xFF868889),
+                          fontSize: 15, fontWeight: FontWeight.w500, letterSpacing: 1.5),
                       border: InputBorder.none),
                   txtfield_padding: 5,
                   txt_input_type: TextInputType.text,
@@ -174,18 +145,13 @@ class _Checkout_ScreenState extends State<Checkout_Screen> {
                 child: DropdownButtonFormField2(
                   decoration: const InputDecoration(
                     border: InputBorder.none,
-                    prefixIcon: Image(
-                        image: AssetImage('assets/images/world_icon.png'),
-                        height: 24,
-                        width: 24),
+                    prefixIcon: Image(image: AssetImage('assets/images/world_icon.png'),
+                        height: 24, width: 24),
                   ),
                   hint: const Text(
                     'Select Your Country',
-                    style: TextStyle(
-                        color: Color(0xFF868889),
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: 1.5),
+                    style: TextStyle(color: Color(0xFF868889),
+                        fontSize: 15, fontWeight: FontWeight.w500, letterSpacing: 1.5),
                   ),
                   icon: const Icon(
                     Icons.arrow_drop_down,
@@ -223,12 +189,9 @@ class _Checkout_ScreenState extends State<Checkout_Screen> {
                       width: MediaQuery.of(context).size.width * 0.9,
                       margin_left: 17,
                       margin_right: 17,
-                      child: const Text("Next",
-                          style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white,
-                              letterSpacing: 1)),
+                      child: const Text("Next", style: TextStyle(
+                          fontSize: 15, fontWeight: FontWeight.w600, color: Colors.white, letterSpacing: 1)
+                      ),
                       gradient: const LinearGradient(
                         colors: <Color>[Color(0xffAEDC81), Color(0xff6CC51D)],
                       ),
@@ -292,7 +255,6 @@ class _Checkout_ScreenState extends State<Checkout_Screen> {
       orderResponse.then((value) {
         if (value['IsOrderPlaced']) {
           form.reset();
-          //item.forEach((element)=>cartProvider.removeProduct(element.id!));
           item.forEach((element) {
             int index = cartProvider.getItemIndex(element.id!);
             cartProvider.cartProductList[index].qty = 0;
@@ -302,25 +264,32 @@ class _Checkout_ScreenState extends State<Checkout_Screen> {
           Future.delayed(
               const Duration(seconds: 1),
               () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (_) => const OrderSuccess_Screen())));
+                  builder: (_) => const OrderSuccess_Screen()
+              )
+              )
+          );
           setState(() {
             isLoading = false;
           });
         } else if (value['IsOrderPlaced'] == false) {
           ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text(value['Message'])));
+              .showSnackBar(SnackBar(content: Text(value['Message'])
+          )
+          );
           setState(() {
             isLoading = false;
           });
         } else {
           ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text(value['Message'])));
+              .showSnackBar(SnackBar(content: Text(value['Message'])
+          )
+          );
           setState(() {
             isLoading = false;
           });
         }
-      });
+      }
+      );
     }
   }
-  /* Navigator.of(context).push(MaterialPageRoute(builder: (_) => OrderSuccess_Screen()));*/
 }

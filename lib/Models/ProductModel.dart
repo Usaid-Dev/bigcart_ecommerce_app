@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'package:bigcart_ecommerce_app/Models/Api_DataModel.dart';
 
 class ProductModel extends ApiDataModel{
@@ -45,5 +44,4 @@ class ProductModel extends ApiDataModel{
     "qty": qty,
     "unit": unit
   };
-
 }

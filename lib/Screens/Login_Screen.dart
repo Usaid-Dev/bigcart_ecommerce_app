@@ -1,13 +1,9 @@
-import 'dart:ui';
 import 'package:bigcart_ecommerce_app/Providers/auth_provider.dart';
 import 'package:bigcart_ecommerce_app/Providers/user_provider.dart';
 import 'package:bigcart_ecommerce_app/Screens/Signup_Screen.dart';
 import 'package:bigcart_ecommerce_app/Widgets/RaisedGradientButton.dart';
 import 'package:bigcart_ecommerce_app/Widgets/custom_textfield.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import '../Utility/Validator.dart';
 import 'Home_Screen.dart';
@@ -33,38 +29,34 @@ class _Login_ScreenState extends State<Login_Screen> {
       body: Stack(
         children: [
           FractionallySizedBox(
-            child: SizedBox.expand(
-                child: FittedBox(
-              fit: BoxFit.cover,
+            child: SizedBox.expand(child: FittedBox(fit: BoxFit.cover,
               child: Image.asset('assets/images/login_auth_img.png'),
-            )),
+            )
+            ),
           ),
           Positioned(
               child: Row(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 30, left: 17, right: 26),
-                child: Material(
-                    color: Colors.transparent,
+              Padding(padding: const EdgeInsets.only(top: 30, left: 17, right: 26),
+                child: Material(color: Colors.transparent,
                     child: InkWell(
                         borderRadius: BorderRadius.circular(30),
                         onTap: () => onback(context),
-                        child: const Icon(Icons.west, color: Colors.white))),
+                        child: const Icon(Icons.west, color: Colors.white)
+                    )
+                ),
               ),
-              const Padding(
-                padding: EdgeInsets.only(top: 30, left: 80),
-                child: Text("Welcome",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 18,
-                        color: Colors.white)),
+              const Padding(padding: EdgeInsets.only(top: 30, left: 80),
+                child: Text("Welcome", style: TextStyle(
+                    fontWeight: FontWeight.w500, fontSize: 18, color: Colors.white)
+                ),
               ),
             ],
-          )),
+          )
+          ),
         ],
       ),
-      bottomNavigationBar: Padding(
-        padding: MediaQuery.of(context).viewInsets,
+      bottomNavigationBar: Padding(padding: MediaQuery.of(context).viewInsets,
         child: Container(
           height: MediaQuery.of(context).size.height * 0.5,
           clipBehavior: Clip.antiAlias,
@@ -72,9 +64,7 @@ class _Login_ScreenState extends State<Login_Screen> {
             color: const Color(0xffF4F5F9),
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
-              BoxShadow(
-                offset: const Offset(0, -15),
-                blurRadius: 20,
+              BoxShadow(offset: const Offset(0, -15), blurRadius: 20,
                 color: const Color(0xFFDADADA).withOpacity(0.15),
               )
             ],
@@ -93,9 +83,8 @@ class _Login_ScreenState extends State<Login_Screen> {
                           width: MediaQuery.of(context).size.width * 0.06),
                       const Text("Welcome back !",
                           style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.w600,
-                              letterSpacing: 1.5)),
+                              fontSize: 25, fontWeight: FontWeight.w600, letterSpacing: 1.5)
+                      ),
                     ],
                   ),
                   Row(
@@ -105,52 +94,39 @@ class _Login_ScreenState extends State<Login_Screen> {
                           width: MediaQuery.of(context).size.width * 0.06),
                       const Text("Sign in to your account",
                           style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
-                              letterSpacing: 1.5,
-                              color: Color(0xff868889))),
+                              fontSize: 15, fontWeight: FontWeight.w400, letterSpacing: 1.5, color: Color(0xff868889)
+                          )
+                      ),
                     ],
                   ),
                   const SizedBox(height: 27),
                   custom_textfield(
                       inputDecoration: const InputDecoration(
-                          prefixIcon: Image(
-                              image: AssetImage('assets/images/email_icon.png'),
-                              height: 18,
-                              width: 18),
+                          prefixIcon: Image(image: AssetImage('assets/images/email_icon.png'),
+                              height: 18, width: 18),
                           suffixIconColor: Colors.white,
                           hintText: "Email Address",
                           hintStyle: TextStyle(
-                              color: Color(0xFF868889),
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                              letterSpacing: 1.5),
+                              color: Color(0xFF868889), fontSize: 15, fontWeight: FontWeight.w500, letterSpacing: 1.5),
                           border: InputBorder.none),
                       fieldValidator: (value) => validateEmail(value),
                       onsaved: (newValue) => _email_address = newValue),
                   const SizedBox(height: 5),
                   custom_textfield(
                     inputDecoration: InputDecoration(
-                        prefixIcon: const Image(
-                            image: AssetImage('assets/images/lock_icon.png'),
-                            height: 18,
-                            width: 18),
+                        prefixIcon: const Image(image: AssetImage('assets/images/lock_icon.png'), height: 18, width: 18),
                         suffixIcon: Material(
                           color: Colors.transparent,
-                          child: InkWell(
-                            borderRadius: BorderRadius.circular(100),
+                          child: InkWell(borderRadius: BorderRadius.circular(100),
                             onTap: () => onpasswordtoggle(),
-                            child: const Image(
-                                image:
-                                    AssetImage('assets/images/eye_icon.png')),
+                            child: const Image(image: AssetImage('assets/images/eye_icon.png')
+                            ),
                           ),
                         ),
                         hintText: "Password",
                         hintStyle: const TextStyle(
-                            color: Color(0xFF868889),
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500,
-                            letterSpacing: 1.5),
+                            color: Color(0xFF868889), fontSize: 15,
+                            fontWeight: FontWeight.w500, letterSpacing: 1.5),
                         border: InputBorder.none),
                     obscure_txt: isPasswordHidden,
                     onsaved: (newValue) => _password = newValue,
@@ -169,23 +145,22 @@ class _Login_ScreenState extends State<Login_Screen> {
                         },
                       ),
                       const Text("Remember me",
-                          style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                              letterSpacing: 1,
-                              color: Color(0xff868889))),
+                          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500,
+                              letterSpacing: 1, color: Color(0xff868889)
+                          )
+                      ),
                       const Spacer(),
                       Material(
                           color: Colors.transparent,
                           child: InkWell(
                             onTap: () => forgotpassword_press(),
-                            child: const Text("Forgot password",
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w500,
-                                    letterSpacing: 1,
-                                    color: Color(0xff407EC7))),
-                          )),
+                            child: const Text("Forgot password", style:
+                            TextStyle(fontSize: 15, fontWeight: FontWeight.w500,
+                                letterSpacing: 1, color: Color(0xff407EC7)
+                                )
+                            ),
+                          )
+                      ),
                       const SizedBox(height: 25, width: 20),
                     ],
                   ),
@@ -228,17 +203,17 @@ class _Login_ScreenState extends State<Login_Screen> {
                               fontSize: 15,
                               fontWeight: FontWeight.w400,
                               letterSpacing: 1,
-                              color: Color(0xff868889))),
+                              color: Color(0xff868889)
+                          )
+                      ),
                       Material(
                         color: Colors.transparent,
                         child: InkWell(
                           onTap: () => onsignup_press(),
                           child: const Text("Sign up",
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w500,
-                                  letterSpacing: 1,
-                                  color: Colors.black)),
+                              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500,
+                                  letterSpacing: 1, color: Colors.black)
+                          ),
                         ),
                       )
                     ],
@@ -266,19 +241,25 @@ class _Login_ScreenState extends State<Login_Screen> {
         if (value['Isloggedin']) {
           Provider.of<User_Provider>(context, listen: false).setUser(value['User']);
           ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text("Login Successfully!")));
+              const SnackBar(content: Text("Login Successfully!")
+              )
+          );
           Future.delayed(
               const Duration(seconds: 1),
               () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => const Home_Screen())));
+                  MaterialPageRoute(builder: (_) => const Home_Screen())
+              )
+          );
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
                 behavior: SnackBarBehavior.floating,
-                content: Text("Message ${value['Message']}")),
+                content: Text("Message ${value['Message']}")
+            ),
           );
         }
-      });
+      }
+      );
     }
   }
 

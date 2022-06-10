@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../Models/ProductModel.dart';
 import '../Providers/product_provider.dart';
 import '../Providers/user_provider.dart';
@@ -8,8 +7,8 @@ import '../Widgets/product_card.dart';
 
 class ProductsByTitle_Screen extends StatefulWidget {
   final String searchQuery;
-
   ProductsByTitle_Screen({required this.searchQuery});
+
   @override
   State<ProductsByTitle_Screen> createState() => _ProductsByTitle_ScreenState();
 }
@@ -17,6 +16,7 @@ class ProductsByTitle_Screen extends StatefulWidget {
 class _ProductsByTitle_ScreenState extends State<ProductsByTitle_Screen> {
   TextEditingController editingController = TextEditingController();
   String title = "";
+
   @override
   void initState() {
     super.initState();
@@ -26,10 +26,9 @@ class _ProductsByTitle_ScreenState extends State<ProductsByTitle_Screen> {
 
   @override
   Widget build(BuildContext context) {
-    User_Provider userProvider =
-        Provider.of<User_Provider>(context, listen: false);
-    Product_Provider productProvider =
-        Provider.of<Product_Provider>(context, listen: false);
+    User_Provider userProvider = Provider.of<User_Provider>(context, listen: false);
+    Product_Provider productProvider = Provider.of<Product_Provider>(context, listen: false);
+
     return Scaffold(
       backgroundColor: const Color(0xffF4F5F9),
       appBar: AppBar(
@@ -41,8 +40,8 @@ class _ProductsByTitle_ScreenState extends State<ProductsByTitle_Screen> {
                 borderRadius: BorderRadius.circular(5)),
             child: TextField(
               decoration: InputDecoration(
-                  prefixIcon: const Image(
-                      image: const AssetImage('assets/images/search_icon.png')),
+                  prefixIcon: const Image(image: AssetImage('assets/images/search_icon.png')
+                  ),
                   suffixIconColor: Colors.white,
                   hintText: "Search keywords...",
                   suffixIcon: Material(
@@ -50,27 +49,22 @@ class _ProductsByTitle_ScreenState extends State<ProductsByTitle_Screen> {
                     child: InkWell(
                       borderRadius: BorderRadius.circular(100),
                       onTap: () {},
-                      child: const Image(
-                          image: AssetImage('assets/images/filter_icon.png')),
+                      child: const Image(image: AssetImage('assets/images/filter_icon.png')
+                      ),
                     ),
                   ),
-                  hintStyle: const TextStyle(
-                      color: Color(0xFF868889),
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500),
+                  hintStyle: const TextStyle(color: Color(0xFF868889),
+                      fontSize: 15, fontWeight: FontWeight.w500),
                   border: InputBorder.none),
-              onChanged: (value) {
-                setState(() {
-                  title = value;
-                });
-              },
-              onSubmitted: (value) {
-                setState(() {
-                  title = value;
-                });
-              },
+              onChanged: (value) {setState(() {title = value;}
+              );
+                },
+              onSubmitted: (value) {setState(() {title = value;}
+              );
+                },
               controller: editingController,
-            )),
+            )
+        ),
         automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         elevation: 0.0,
@@ -117,6 +111,5 @@ class _ProductsByTitle_ScreenState extends State<ProductsByTitle_Screen> {
       ),
     );
   }
-
   onsearch(String value) {}
 }

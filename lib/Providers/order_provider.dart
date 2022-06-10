@@ -8,20 +8,18 @@ import '../Models/OrderModel.dart';
 class Order_Provider extends ChangeNotifier {
 
   late OrderModel data;
-  Future<Map<String, dynamic>> placeOrder({required OrderModel orderModel ,required String accessToken}) async {
+  Future<Map<String, dynamic>> placeOrder({required OrderModel orderModel ,required String accessToken})
+  async {
     Map<String, dynamic> result={};
     Map<String, String> _tokendata = {
       'Authorization': 'Bearer $accessToken',
       "Content-Type": "application/json"
     };
-
-      var response = await http.post(Uri.parse(api_urls.createorder),headers: _tokendata, body: jsonEncode(orderModel.toJson()));
-
+    var response = await http.post
+      (Uri.parse(api_urls.createorder),headers: _tokendata, body: jsonEncode(orderModel.toJson()));
       try {
         if(response.statusCode == 200) {
             var decodedjson = jsonDecode(response.body);
-            /*print("Success message :  ${decodedjson['message']}");
-            print("response body :  ${decodedjson.toString()}");*/
             data = OrderModel.fromJson(decodedjson['data']);
             notifyListeners();
             result = {
@@ -30,10 +28,9 @@ class Order_Provider extends ChangeNotifier {
               "Message": "Your Order Is Successfully Placed."
             };
           }
+
         else {
           var decodedjson = jsonDecode(response.body);
-          /*print("StatusCode:  ${response.statusCode}");
-          print("Error message:  ${decodedjson['message']}");*/
           result = {
             "IsOrderPlaced":false,
             "Message": "${decodedjson['message']}"
@@ -53,9 +50,6 @@ class Order_Provider extends ChangeNotifier {
           "Message": "Something went wrong! Please try again in a moment!",
         };
       }
-
     return result;
   }
-
-
 }

@@ -1,12 +1,9 @@
-import 'dart:ui';
-import 'dart:convert';
 class CartModel {
   int productId, categoryId, stock, qty;
   String title, image, unit;
   String color;
   double price;
   bool productAdded = false, productFavorite = false;
-
 
   CartModel({required this.productId,
        required this.categoryId,
@@ -20,7 +17,6 @@ class CartModel {
       required this.productFavorite,
       required this.color
       });
-
 
   fromJson(json){return CartModel(
   productId: json['productId'],

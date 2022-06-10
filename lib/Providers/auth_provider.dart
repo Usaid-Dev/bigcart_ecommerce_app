@@ -21,18 +21,17 @@ class Auth_Provider extends ChangeNotifier {
   set isRemember(bool value) {
     _isRemember = value;
   }
-  Future<Map<String, dynamic>> getUserLoggedIn(String emailaddress, String password) async {
 
+  Future<Map<String, dynamic>> getUserLoggedIn(String emailaddress, String password)
+  async {
     Map<String, dynamic> result;
     Map<String, dynamic> _loginData = {
-
       'email': emailaddress,
       'password': password
     };
+
     print(_loginData);
-
     _isLoading = true;
-
     notifyListeners();
 
     try {
@@ -41,11 +40,9 @@ class Auth_Provider extends ChangeNotifier {
         var decodedjson = jsonDecode(response.body);
         UserModel user = UserModel.fromJson(decodedjson['data']);
         var apiresponse = Api_Response.fromJson(decodedjson, user);
-      
+
         if(isRemember)
-          {
-            User_Perference().saveUserInfo(user);
-          }
+          { User_Perference().saveUserInfo(user); }
         _isLoading = false;
         _isLoggedIn = true;
         _message = apiresponse.message;
@@ -99,19 +96,16 @@ class Auth_Provider extends ChangeNotifier {
 
   }
 
-
-  Future<Map<String, dynamic>> getUserSignedUp(String emailaddress,String phone, String password) async {
-
+  Future<Map<String, dynamic>> getUserSignedUp(String emailaddress,String phone, String password)
+  async {
     Map<String, dynamic> result;
     Map<String, dynamic> signupdata = {
-
       'email': emailaddress,
       'phone': phone,
       'password': password
     };
 
     print(signupdata);
-
     _isLoading = true;
     notifyListeners();
 
@@ -122,7 +116,6 @@ class Auth_Provider extends ChangeNotifier {
         UserModel user = UserModel.fromJson(decodedjson['data']);
         var apiresponse = Api_Response.fromJson(decodedjson, user);
         User_Perference().saveUserInfo(user);
-
         _isLoading = false;
         _isSignedup = true;
         _message = apiresponse.message;
@@ -146,18 +139,15 @@ class Auth_Provider extends ChangeNotifier {
     } on SocketException catch (e) {
       print(e.message);
       return result = {
-        "isSignedup": false,
+        "isSigned": false,
         "Message": "Unable to reach the internet! Please try again in a moment.",
       };
-    }
-    catch(e){
+    } catch(e){
       print(e);
       return result = {
-        "isSignedup": false,
+        "isSigned": false,
         "Message": "Something went wrong! Please try again in a moment!",
       };
     }
-
   }
-
 }

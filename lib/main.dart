@@ -37,7 +37,7 @@ class _MyAppState extends State<MyApp> {
           primaryColorDark: const Color(0xff6CC51D),
           primaryColor: const Color(0xffAEDC81),
         ),
-        home: Splash_Screen(),
+        home: const Splash_Screen(),
       ),
     );
   }
