@@ -1,9 +1,17 @@
-# Flutter Assignment 4 | E-CommerceApp | BigCartApp
+# E-CommerceApp | BigCartApp
 
-_Pixel Perfect UI From Figma._
+A new Flutter project.
 
-_Fetch Data Using REST APIs._
+## Getting Started
 
-_Maintain App State Using Providers._
+This project is a starting point for a Flutter application.
 
-_Saved User Session In SharedPreferences._
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
+
