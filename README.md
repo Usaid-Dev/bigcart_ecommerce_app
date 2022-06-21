@@ -16,4 +16,4 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 <h4>Splash_Screen</h4>
-<img src="https://user-images.githubusercontent.com/67046451/174775630-05594716-1d6e-43a0-9d04-c894b5b02a91.jpeg" width="200" height="300">
+<img src="https://user-images.githubusercontent.com/67046451/174775630-05594716-1d6e-43a0-9d04-c894b5b02a91.jpeg" width="200" height="250">
