@@ -28,7 +28,7 @@ samples, guidance on mobile development, and a full API reference.
 <h4>Favourites_Screen</h4>
 <img src="https://user-images.githubusercontent.com/67046451/174978765-e86ce2b8-0a7d-4bd6-a1ff-0fe1707c88c7.png" width="150" height="280">
 <h4>ShoppingCart_Screen</h4>
-<img src="https://user-images.githubusercontent.com/67046451/174978940-c2763dd5-b8c5-440c-b51a-b42d3f5b0b53.png" width="150" height="280">
+<img src="https://user-images.githubusercontent.com/67046451/174995980-5edf181c-fd74-49e0-a8c7-d3fc2d18b48d.png" width="150" height="280">
 <h4>Checkout_Screen</h4>
 <img src="https://user-images.githubusercontent.com/67046451/174979086-9c82af7b-2c0f-4cb5-a59b-4e317cd29558.png" width="150" height="280">
 <h4>SuccessfullyOrdered_Screen</h4>
