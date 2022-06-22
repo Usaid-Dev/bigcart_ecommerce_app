@@ -15,11 +15,15 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-<h4>Splash_Screen</h4>
-<img src="https://user-images.githubusercontent.com/67046451/174775630-05594716-1d6e-43a0-9d04-c894b5b02a91.jpeg" width="150" height="280">
-<h4>Login_Screen</h4>
-<img src="https://user-images.githubusercontent.com/67046451/174776405-35a34287-a0bf-4b5b-91a0-707e02728b33.jpeg" width="150" height="280">
-<h4>Signup_Screen</h4>
-<img src="https://user-images.githubusercontent.com/67046451/174776558-8d9b4106-98bf-48ca-a14e-c55de8ff1060.jpeg" width="150" height="280">
+## Figma UI
+You can see Figma UI which I have implemented.
 
-
+<div>
+<img src="https://github.com/MuhammadJamalAshrafi/big_cart_app/blob/main/assets/images/Splash.png" width="200" height="400">
+<img src="https://github.com/MuhammadJamalAshrafi/big_cart_app/blob/main/assets/images/Signup.png" width="200" height="400">
+<img src="https://github.com/MuhammadJamalAshrafi/big_cart_app/blob/main/assets/images/Login.png" width="200" height="400">
+<img src="https://github.com/MuhammadJamalAshrafi/big_cart_app/blob/main/assets/images/Home.png" width="200" height="600">
+<img src="https://github.com/MuhammadJamalAshrafi/big_cart_app/blob/main/assets/images/Prodcuts.png" width="200" height="400">
+<img src="https://github.com/MuhammadJamalAshrafi/big_cart_app/blob/main/assets/images/Checkout.png" width="200" height="400">
+<img src="https://github.com/MuhammadJamalAshrafi/big_cart_app/blob/main/assets/images/Shipping%20Information.png" width="200" height="400">
+</div>
